@@ -29,7 +29,7 @@ http://touchslider.com
 				pagination: "." + namespace + "-nav-item",
 				currentClass: namespace + "-nav-item-current",
 				duration: 350,
-				mouseTouch: true
+				mouseTouch: false
 				// [container, scroller]
 			}, options);
 
@@ -42,7 +42,7 @@ http://touchslider.com
 				stop: stop
 			},
 			isTouchWebkit = "ontouchstart" in window && "WebKitCSSMatrix" in window,
-			touchstart = "touchstart", touchmove = "touchmove", touchend = "touchend",
+			touchstart = "touchstart", touchend = "touchend",
 			viewport = $(options.viewport, container),
 			scroller = options.scroller ? $(options.scroller, container) : viewport.children(),
 			slides = scroller.children(),
