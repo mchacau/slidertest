@@ -5,58 +5,32 @@
 	<title>Page Title</title> 
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-
-	<link rel="stylesheet" href="jquery.mobile-1.2.0.min.css" />
+    <link rel="stylesheet" href="themes/candy.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile.structure-1.2.0.min.css" />
 	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 </head> 
 <body> 
 
 <!-- Start of first page -->
-<div data-role="page" id="foo">
+<div data-role="page" id="first" data-theme="a">
 
-	<div data-role="header" data-position="fixed" data-id="myheader">
-		<h1>Foo</h1>
-	</div><!-- /header -->
+<!--  	<div data-role="header" data-position="fixed" data-id="myheader" > -->
+<!--		<h1>Foo</h1>-->
+<!--	</div><!-- /header -->
 
 	<div data-role="content">	
-		<p>I'm first in the source order so I'm shown as the page.
-		I'm first in the source order so I'm shown as the page.
-		I'm first in the source order so I'm shown as the page.</p>		
-I'm first in the source order so I'm shown as the page.
-I'm first in the source order so I'm shown as the page.
-I'm first in the source order so I'm shown as the page.
-I'm first in the source order so I'm shown as the page.
-I'm first in the source order so I'm shown as the page.
-I'm first in the source order so I'm shown as the page.
-I'm first in the source order so I'm shown as the page.
-I'm first in the source order so I'm shown as the page.
-I'm first in the source order so I'm shown as the page.
-I'm first in the source order so I'm shown as the page.
-
-I'm first in the source order so I'm shown as the page.
-I'm first in the source order so I'm shown as the page.
-I'm first in the source order so I'm shown as the page.
-
-I'm first in the source order so I'm shown as the page.
-I'm first in the source order so I'm shown as the page.
-
-I'm first in the source order so I'm shown as the page.
-I'm first in the source order so I'm shown as the page.
-I'm first in the source order so I'm shown as the page.
-I'm first in the source order so I'm shown as the page.
-
-v
-
-		<p>View internal page called </p>	
+		
 	</div><!-- /content -->
 
 	<div data-role="footer" data-position="fixed" data-id="myfooter">
 	<div data-role="navbar">
 	<ul>
-		<li><a href="#foo" data-transition="slideup" class="ui-btn-active ui-state-persist" data-prefetch>One</a></li>
-		<li><a href="#bar" data-transition="slideup" data-prefetch>Two</a></li>
-		
+		<li><a href="#first" data-transition="slideup" data-icon="delete" data-mini="true" class="ui-btn-active ui-state-persist" data-prefetch>Home</a></li>
+		<li><a href="#second" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch>My Details</a></li>
+		<li><a href="#third" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch>Location</a></li>
+		<li><a href="#forth" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch>Menu</a></li>
+		<li><a href="#fifth" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch>About</a></li>
 	</ul>
 </div>
 	</div><!-- /footer -->
@@ -64,25 +38,100 @@ v
 
 
 <!-- Start of second page -->
-<div data-role="page" id="bar">
+<div data-role="page" id="second" data-theme="a">
 
-	<div data-role="header" data-position="fixed" data-id="myheader">
-		<h1>Bar</h1>
-	</div><!-- /header -->
+<!--  	<div data-role="header" data-position="fixed" data-id="myheader" > -->
+<!--		<h1>Foo</h1>-->
+<!--	</div><!-- /header -->
 
 	<div data-role="content">	
-		<p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if a link that references my id is beeing clicked.</p>		
-		<p><a href="#foo">Back to foo</a></p>	
+	
 	</div><!-- /content -->
 
 	<div data-role="footer" data-position="fixed" data-id="myfooter">
 	<div data-role="navbar">
 	<ul>
-		<li><a href="#foo" data-transition="slideup" data-prefetch>One</a></li>
-		<li><a href="#bar" data-transition="slideup" class="ui-btn-active ui-state-persist" data-prefetch>Two</a></li>
+		<li><a href="#first" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
+		<li><a href="#second" data-transition="slideup" data-icon="delete" data-mini="true" class="ui-btn-active ui-state-persist" data-prefetch></a></li>
+		<li><a href="#third" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
+		<li><a href="#forth" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
+		<li><a href="#fifth" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
 	</ul>
 </div>
 	</div><!-- /footer -->
 </div><!-- /page -->
+<!-- Start of third page -->
+<div data-role="page" id="third" data-theme="a">
+
+<!--  	<div data-role="header" data-position="fixed" data-id="myheader" > -->
+<!--		<h1>Foo</h1>-->
+<!--	</div><!-- /header -->
+
+	<div data-role="content">	
+	
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed" data-id="myfooter">
+	<div data-role="navbar">
+	<ul>
+		<li><a href="#first" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
+		<li><a href="#second" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
+		<li><a href="#third" data-transition="slideup" data-icon="delete" data-mini="true" class="ui-btn-active ui-state-persist" data-prefetch></a></li>
+		<li><a href="#forth" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
+		<li><a href="#fifth" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
+	</ul>
+</div>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- Start of forth page -->
+<div data-role="page" id="forth" data-theme="a">
+
+<!--  	<div data-role="header" data-position="fixed" data-id="myheader" > -->
+<!--		<h1>Foo</h1>-->
+<!--	</div><!-- /header -->
+
+	<div data-role="content">	
+	
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed" data-id="myfooter">
+	<div data-role="navbar">
+	<ul>
+		<li><a href="#first" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
+		<li><a href="#second" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
+		<li><a href="#third" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
+		<li><a href="#forth" data-transition="slideup" data-icon="delete" data-mini="true" class="ui-btn-active ui-state-persist" data-prefetch></a></li>
+		<li><a href="#fifth" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
+	</ul>
+</div>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- Start of fifth page -->
+<div data-role="page" id="fifth" data-theme="a">
+
+<!--  	<div data-role="header" data-position="fixed" data-id="myheader" > -->
+<!--		<h1>Foo</h1>-->
+<!--	</div><!-- /header -->
+
+	<div data-role="content">	
+	
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed" data-id="myfooter">
+	<div data-role="navbar">
+	<ul>
+		<li><a href="#first" data-transition="slideup"  data-icon="delete" data-mini="true" data-prefetch></a></li>
+		<li><a href="#second" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
+		<li><a href="#third" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
+		<li><a href="#forth" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
+		<li><a href="#fifth" data-transition="slideup" data-icon="delete" data-mini="true" class="ui-btn-active ui-state-persist" data-prefetch></a></li>
+	</ul>
+</div>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
 </body>
 </html>
