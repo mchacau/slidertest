@@ -1,5 +1,5 @@
 <head>
-
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script src="jquery.touchslider.js"></script>
 <script>
@@ -9,27 +9,29 @@ jQuery(function($) {
 
 </script>
 <style>
-body{
-height: 100%;
-}
+
 
 #touchslider-nav{
+margin-left: -10px;
 position: fixed;
-bottom: 0;
-width: 320px;
+bottom:0;
+width: 100%;
 background-color: #000000;
 }
 .touchslider-item{
-height: 100%;
-width:320px;
-overflow: scroll;
+
+width:300px;
+overflow-y: scroll;
 }
 .touchslider-viewport{
 
 width:320px;
 height:100%;
 bottom: 50px;
-
+top:0;
+}
+.touchslider-nav-item{
+margin-right:-5px;
 }
 </style>
 </head>
