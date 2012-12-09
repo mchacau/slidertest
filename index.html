@@ -1,140 +1,52 @@
-<!doctype html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<script src="iscroll-lite.js"></script>
-<script src="app.js"></script>
-  <title>Sculder</title>
-<style type="text/css">
-html, body{
- margin: 0;
- padding: 0;
- border: 0;
-}
-body {
- font-family:Arial,  sans-serif;
- line-height:1.5;
- font-size:16px;
- background: #fff;
- padding:5px;
- color: #000;
- word-wrap: break-word;
- -webkit-text-size-adjust: none;
-}
-h1, h2, h3, h4, h5, h6{ font-weight: normal; }
-p img { float: left; margin: 0 10px 5px 0; padding: 0; }
-img { border: 0; max-width: 100%; }
-/*  Main Styles */
-body{
-    background: #222;
-}
-header{
-    top:0; left:0;
-    height:45px;
-}
-footer {
-    bottom:0; left:0;
-    height:48px;
-    background-color:#c27b00;
-    border-top:1px solid #eee;
-}
-header, footer{
-    background-color:#deb500;
-    padding:0;
-    position:absolute;
-    z-index:2;
-    font-size:20px;
-    width:100%;
-    text-align:center;
-    color:#f3f3f3;
-    font-weight:bold;
-    text-shadow:0 -1px 0 rgba(0,0,0,0.5);
-    line-height:45px;
-}
-h1{
-    margin:0;
-    text-transform: uppercase;
-}
-#wrapper {
-    position:absolute;
-    z-index:1;
-    top:45px; bottom:48px; left:0;
-    width:100%;
-    overflow:auto;
-}
-#main-content {
-    position:absolute;
-    z-index:1;
-    width:100%;
-    padding:0;
-}
-#tab-bar{
-    margin:0;
-    padding:0;
-}
-#tab-bar li {
-    display: inline;
-    float:left;
-    width: 33.333%;
-}
-#tab-bar a {
-    color: #cdcdcd;
-    display: block;
-    font-weight: bold;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    -webkit-touch-callout:none;
-}
 
-#pages > div.current {
-    display: block;
-}
-#pages{
-    position:relative;
-}
-/* Update this style */
-#pages > div {
-    display: none;
-    position: absolute;
-    top:0;left:0;
-    width:100%;
-}
-</style>
-</head>
-<body>
-<header>
-    <h1>Sculder</h1>
-</header>
-<div id="wrapper">
-    <div id="main-content">
-<div id="pages">
-    <div id="map" class="current">
-    hello
-    </div>
-    <div id="camera">
-    hi
-    </div>
-    <div id="twitter">
-    what
-    </div>
-</div>
-    </div>
-</div>
-<footer>
-<ul id="tab-bar">
-    <li>
-        <a href="#map">Map</a>
-    </li>
-    <li>
-        <a href="#camera">Camera</a>
-    </li>
-    <li>
-        <a href="#twitter">Twitter</a>
-    </li>
-</ul>
-</footer>
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Page Title</title> 
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+</head> 
+<body> 
+
+<!-- Start of first page -->
+<div data-role="page" id="foo">
+
+	<div data-role="header">
+		<h1>Foo</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p>I'm first in the source order so I'm shown as the page.</p>		
+		<p>View internal page called <a href="#bar">bar</a></p>	
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<p>View internal page called <a href="#bar">bar</a></p>	
+		<p><a href="#foo">Back to foo</a></p>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+<!-- Start of second page -->
+<div data-role="page" id="bar">
+
+	<div data-role="header">
+		<h1>Bar</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if a link that references my id is beeing clicked.</p>		
+		<p><a href="#foo">Back to foo</a></p>	
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<p>View internal page called <a href="#bar">bar</a></p>	
+		<p><a href="#foo">Back to foo</a></p>
+	</div><!-- /footer -->
+</div><!-- /page -->
 </body>
 </html>
