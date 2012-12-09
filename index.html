@@ -9,6 +9,71 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile.structure-1.2.0.min.css" />
 	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	   <script type="text/javascript" src="phonegap.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+  
+  function distance(lat1,lon1,lat2,lon2) {
+    var R = 6371; // km (change this constant to get miles)
+    var dLat = (lat2-lat1) * Math.PI / 180;
+    var dLon = (lon2-lon1) * Math.PI / 180; 
+    var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.cos(lat1 * Math.PI / 180 ) * Math.cos(lat2 * Math.PI / 180 ) * 
+        Math.sin(dLon/2) * Math.sin(dLon/2); 
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+    var d = R * c;
+    return Math.round(d*1000);
+    }
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+        document.addEventListener("resume", onResume, false);
+    }
+
+    // onSuccess Geolocation
+    //
+    var onSuccess = function(position) {
+  var lt1 = position.coords.latitude;
+  var ln1 = position.coords.longitude;
+  var store = distance(lt1,ln1,-27.614617,153.044336);
+  var store1 = distance(lt1,ln1,-26.442449,153.039722);
+  var store2 = distance(lt1,ln1,-26.375492,152.994704);
+	alert(store + ' ' +store1 + ' ' +store2);
+
+
+};
+
+    // onError Callback receives a PositionError object
+    //
+    function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+                'message: ' + error.message + '\n');
+    }
+   function onResume() {
+       navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    }
+        function alertDismissed() {
+        // do something
+    }
+
+    // Show a custom alertDismissed
+    //
+    function showAlert() {
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            alertDismissed,         // callback
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
+    }
+
+  
+
+  </script>
 </head> 
 <body> 
 
@@ -20,17 +85,16 @@
 <!--	</div><!-- /header -->
 
 	<div data-role="content">	
-		
+		<a href="#second" data-role="button" data-transition="slideup"  data-mini="true" data-prefetch>My Details</a>
 	</div><!-- /content -->
 
 	<div data-role="footer" data-position="fixed" data-id="myfooter">
-	<div data-role="navbar">
+	<div data-role="navbar" >
 	<ul>
-		<li><a href="#first" data-transition="slideup" data-icon="delete" data-mini="true" class="ui-btn-active ui-state-persist" data-prefetch>Home</a></li>
-		<li><a href="#second" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch>My Details</a></li>
-		<li><a href="#third" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch>Location</a></li>
-		<li><a href="#forth" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch>Menu</a></li>
-		<li><a href="#fifth" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch>About</a></li>
+		<li><a href="#first" data-transition="slideup"  data-mini="true" class="ui-btn-active ui-state-persist" data-prefetch>Home</a></li>
+		<li><a href="#third" data-transition="slideup"  data-mini="true" data-prefetch>Location</a></li>
+		<li><a href="#forth" data-transition="slideup"  data-mini="true" data-prefetch>Menu</a></li>
+		<li><a href="#fifth" data-transition="slideup"  data-mini="true" data-prefetch>About</a></li>
 	</ul>
 </div>
 	</div><!-- /footer -->
@@ -40,25 +104,15 @@
 <!-- Start of second page -->
 <div data-role="page" id="second" data-theme="a">
 
-<!--  	<div data-role="header" data-position="fixed" data-id="myheader" > -->
-<!--		<h1>Foo</h1>-->
-<!--	</div><!-- /header -->
+	<div data-role="header" data-position="fixed" data-id="myheader" >
+	<a href="#first" data-transition="slidedown" data-mini="true" data-role="button" data-icon="arrow-l" data-prefetch>Back</a>
+	<h1>My Details</h1>
+	</div><!-- /header -->
 
 	<div data-role="content">	
 	
 	</div><!-- /content -->
 
-	<div data-role="footer" data-position="fixed" data-id="myfooter">
-	<div data-role="navbar">
-	<ul>
-		<li><a href="#first" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
-		<li><a href="#second" data-transition="slideup" data-icon="delete" data-mini="true" class="ui-btn-active ui-state-persist" data-prefetch></a></li>
-		<li><a href="#third" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
-		<li><a href="#forth" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
-		<li><a href="#fifth" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
-	</ul>
-</div>
-	</div><!-- /footer -->
 </div><!-- /page -->
 <!-- Start of third page -->
 <div data-role="page" id="third" data-theme="a">
@@ -75,7 +129,6 @@
 	<div data-role="navbar">
 	<ul>
 		<li><a href="#first" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
-		<li><a href="#second" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
 		<li><a href="#third" data-transition="slideup" data-icon="delete" data-mini="true" class="ui-btn-active ui-state-persist" data-prefetch></a></li>
 		<li><a href="#forth" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
 		<li><a href="#fifth" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
@@ -99,7 +152,6 @@
 	<div data-role="navbar">
 	<ul>
 		<li><a href="#first" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
-		<li><a href="#second" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
 		<li><a href="#third" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
 		<li><a href="#forth" data-transition="slideup" data-icon="delete" data-mini="true" class="ui-btn-active ui-state-persist" data-prefetch></a></li>
 		<li><a href="#fifth" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
@@ -123,7 +175,6 @@
 	<div data-role="navbar">
 	<ul>
 		<li><a href="#first" data-transition="slideup"  data-icon="delete" data-mini="true" data-prefetch></a></li>
-		<li><a href="#second" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
 		<li><a href="#third" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
 		<li><a href="#forth" data-transition="slideup" data-icon="delete" data-mini="true" data-prefetch></a></li>
 		<li><a href="#fifth" data-transition="slideup" data-icon="delete" data-mini="true" class="ui-btn-active ui-state-persist" data-prefetch></a></li>
