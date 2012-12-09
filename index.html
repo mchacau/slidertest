@@ -6,7 +6,7 @@
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<link rel="stylesheet" href="jquery.mobile-1.2.0.min.css" />
 	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 </head> 
@@ -15,7 +15,7 @@
 <!-- Start of first page -->
 <div data-role="page" id="foo">
 
-	<div data-role="header">
+	<div data-role="header" data-position="fixed" data-id="myheader">
 		<h1>Foo</h1>
 	</div><!-- /header -->
 
@@ -24,9 +24,9 @@
 		<p>View internal page called <a href="#bar">bar</a></p>	
 	</div><!-- /content -->
 
-	<div data-role="footer">
-		<p>View internal page called <a href="#bar">bar</a></p>	
-		<p><a href="#foo">Back to foo</a></p>
+	<div data-role="footer" data-position="fixed" data-id="myfooter">
+		<p>View internal page called <a href="#bar" data-role="button" data-transition="slideup">bar</a></p>	
+		<p><a href="#foo" data-role="button" data-transition="slideup">Back to foo</a></p>
 	</div><!-- /footer -->
 </div><!-- /page -->
 
@@ -34,7 +34,7 @@
 <!-- Start of second page -->
 <div data-role="page" id="bar">
 
-	<div data-role="header">
+	<div data-role="header" data-position="fixed" data-id="myheader">
 		<h1>Bar</h1>
 	</div><!-- /header -->
 
@@ -43,9 +43,9 @@
 		<p><a href="#foo">Back to foo</a></p>	
 	</div><!-- /content -->
 
-	<div data-role="footer">
-		<p>View internal page called <a href="#bar">bar</a></p>	
-		<p><a href="#foo">Back to foo</a></p>
+	<div data-role="footer" data-position="fixed" data-id="myfooter">
+		<p>View internal page called <a href="#bar" data-role="button" data-transition="slideup">bar</a></p>	
+		<p><a href="#foo" data-role="button" data-transition="slideup">Back to foo</a></p>
 	</div><!-- /footer -->
 </div><!-- /page -->
 </body>
