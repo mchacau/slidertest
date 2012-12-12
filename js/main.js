@@ -55,8 +55,8 @@ $("#loginForm").on("submit",handleLogin);
 function showAlert() {
   localStorage.removeItem("username");
   localStorage.removeItem("password");
-  checkPreAuth(); 
   $.mobile.changePage("index.html");
+  checkPreAuth(); 
     }
     
     
